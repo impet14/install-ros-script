@@ -24,7 +24,7 @@ fi
 
 sudo apt-fast update
 
-sudo apt-fast install ros-melodic-desktop-full
+sudo apt-fast install -y ros-melodic-desktop-full
 
 echo "DONE! install ros-melodic-desktop-full then initialize ROS and update"
 
@@ -41,7 +41,7 @@ fi
 source ~/.bashrc
 
 echo "Installing Dependencies"
-sudo apt-fast install python-rosinstall python-rosinstall-generator python-wstool build-essential terminator
+sudo apt-fast install -y python-rosinstall python-rosinstall-generator python-wstool build-essential terminator
 
 echo "finished ROS and GO!"
 apt-fast autoremove
