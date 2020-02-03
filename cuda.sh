@@ -1,6 +1,16 @@
 #!/bin/bash
 set -x
 
+if ls /etc/apt/sources.list.d/ | grep -q "apt-fast-ubuntu"; then
+	echo "found apt-fast-ubuntu"
+else
+	echo "not found apt-fast-ubuntu"
+	echo "Let install apt-fast first"
+	sudo add-apt-repository ppa:apt-fast/stable
+	sudo apt-get update
+	sudo apt-get -y install apt-fast
+fi
+ex
 if grep -rn '/etc/apt/' -e 'cuda'; then
     echo "found cuda in source list"
 else
