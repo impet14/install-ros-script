@@ -25,16 +25,9 @@ sudo apt-fast install -y ./nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64
 
 sudo apt-fast update
 sudo apt-fast -y install --no-install-recommends cuda-10-2
-sudo apt-fast install -y --no-install-recommends libcudnn7=7.6.5.32-1+cuda10.2 libcudnn7-dev=7.6.5.32-1+cuda10.2
+sudo apt-fast install -y --no-install-recommends libcudnn7=7.6.5.32-1+cuda10.2 libcudnn7-dev=7.6.5.32-1+cuda10.2 cuda-cudart-10-2
 sudo apt-fast install -y --no-install-recommends libnvinfer7=7.0.0-1+cuda10.2 libnvinfer-dev=7.0.0-1+cuda10.2 libnvinfer-plugin7=7.0.0-1+cuda10.2 libnvinfer-plugin-dev=7.0.0-1+cuda10.2
 
-
-if grep -q "/extras/CUPTI/lib64" ~/.bashrc; then
-    echo "found CUPTI/lib64 in bashrc"
-else
-    echo "not found CUPTI/lib64 in bashrc"
-    echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64" >> ~/.bashrc
-fi
 
 if grep -q "/usr/local/cuda-10.2/bin" ~/.bashrc; then
     echo "found /usr/local/cuda-10.2/bin in bashrc"
